@@ -14,7 +14,7 @@ there is a example and code available
 
 
 ### Test on ATmega168p, code example for avr-gcc
-
+/*
 The Theory, make it more simple and straight.
 
 Vbg = 1.1V, the internal voltage reference, [https://xiaolaba.wordpress.com/2016/12/01/avr-mcu-bandgap-reference/](https://xiaolaba.wordpress.com/2016/12/01/avr-mcu-bandgap-reference/)  
@@ -43,6 +43,10 @@ Vin = 1100mV x 1024 / ADC value
 
 ### my code to the test  
 
+
+*/
+
+
 ```
 long detectVcc() {
  // Read 1.1V reference against AVcc
@@ -61,7 +65,7 @@ long detectVcc() {
  ADCSRA |= _BV(ADSC); // Start conversion
  while (bit_is_set(ADCSRA,ADSC)); // measuring
 
- uint8_t low&nbsp; = ADCL; // must read ADCL first - it then locks ADCH
+ uint8_t low  = ADCL; // must read ADCL first - it then locks ADCH
  uint8_t high = ADCH; // unlocks both
 
  long result = (high<<8) | low;
