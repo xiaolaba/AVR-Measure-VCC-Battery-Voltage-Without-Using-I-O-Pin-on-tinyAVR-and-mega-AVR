@@ -15,7 +15,7 @@ there is a example and code available
 
 
 
-### Test on ATmega168p, code example for avr-gcc
+### Test on ATmega168p, code example for avr-gcc, xiaolaba, 2020-AUG-28
 
 The Theory, make it more simple and straight.
 
