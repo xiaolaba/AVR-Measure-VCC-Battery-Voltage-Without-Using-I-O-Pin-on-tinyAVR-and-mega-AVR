@@ -12,5 +12,21 @@ code example for avr-gcc
 The Theory, make it more simple and straight.
 
 Vbg = 1.1V, the internal voltage referrence
-VCC = battery voltage
-ADC value = 
+VCC = battery voltage  
+
+Equation of ADC coversion by AVR MCU,  
+```
+ADC value = Vref x 1024 / Vin  
+```
+
+Re-arrange this equation abit  
+
+Vin = Vref x 1024 / ADC value  
+
+Vin = Battery voltage, to be detemined  
+Vref = Vga = 1.1V = 1100mV  
+ADC value = read out  
+plug in those to the equation above,  
+```  
+Vin = 1100mV x 1024 / ADC value  
+```  
