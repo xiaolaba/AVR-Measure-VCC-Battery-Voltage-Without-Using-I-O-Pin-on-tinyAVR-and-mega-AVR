@@ -1,3 +1,5 @@
+/*  
+
 # AVR-Measure-VCC-Battery-Voltage-Without-Using-I-O-Pin-on-tinyAVR-and-mega-AVR
 Atmel's days, the community has succeeded with this trick, but until Microchip acquired & merged and published the APP note, there was no code available.  
 
@@ -14,7 +16,7 @@ there is a example and code available
 
 
 ### Test on ATmega168p, code example for avr-gcc
-/*
+
 The Theory, make it more simple and straight.
 
 Vbg = 1.1V, the internal voltage reference, [https://xiaolaba.wordpress.com/2016/12/01/avr-mcu-bandgap-reference/](https://xiaolaba.wordpress.com/2016/12/01/avr-mcu-bandgap-reference/)  
@@ -43,7 +45,7 @@ Vin = 1100mV x 1024 / ADC value
 
 ### my code to the test  
 
-
+  
 */
 
 
