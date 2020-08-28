@@ -20,7 +20,8 @@ there is a example and code available
 The Theory, make it more simple and straight.
 
 Vbg = 1.1V, the internal voltage reference, [https://xiaolaba.wordpress.com/2016/12/01/avr-mcu-bandgap-reference/](https://xiaolaba.wordpress.com/2016/12/01/avr-mcu-bandgap-reference/)  
-VCC = battery voltage  
+
+Vbat = battery voltage, TBD  
 
 Equation of ADC coversion by AVR MCU,  
 ```
