@@ -17,7 +17,10 @@ there is a example and code available
 
 ### Test on ATmega168p, code example for avr-gcc
 
-The Theory, make it more simple and straight.
+The Theory, make it more simple and straight forward.  
+![ATmega168P_Vbat_xiaolaba.jpg](ATmega168P_Vbat_xiaolaba.jpg)  
+.  
+.  
 
 Vbg = 1.1V, the internal voltage reference, [https://xiaolaba.wordpress.com/2016/12/01/avr-mcu-bandgap-reference/](https://xiaolaba.wordpress.com/2016/12/01/avr-mcu-bandgap-reference/)  
 
