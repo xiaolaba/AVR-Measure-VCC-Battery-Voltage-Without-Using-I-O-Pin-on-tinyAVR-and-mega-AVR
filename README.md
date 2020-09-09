@@ -47,6 +47,12 @@ Vbat = 1100mV * 1024 / ADC value
 .  
 .  
 
+### circuit  
+![xiaolaba_avr_bat_vol_circuit.jpg](xiaolaba_avr_bat_vol_circuit.jpg)  
+.  
+.  
+
+
 ### my code to the test  
 
   
