@@ -70,7 +70,9 @@ long detectVcc() {
     #elif defined (__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
         ADMUX = _BV(MUX3) | _BV(MUX2);
     #elif defined (__AVR_ATmega168__) || (__AVR_ATmega168p__) || defined(__AVR_ATmega328p__) || defined(__AVR_ATmega328__)
-        ADMUX = _BV(REFS0) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);   // AREF pin = Vcc, disable left adjusted result, uses 1.1Vbg       
+        ADMUX = _BV(REFS0) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);   // AREF pin = Vcc, disable left adjusted result, uses 1.1Vbg
+    #elif defined (__AVR_ATmega8__) || (__AVR_ATmega8L__)
+        ADMUX = _BV(REFS0) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);   // AREF pin = Vcc, Atmega8/L, MUX3:0 = 1110, uses bandgrap reference 1.3Vbg, 2023-09-05 update       
     #else
         ADMUX = _BV(REFS0) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);
     #endif
@@ -83,9 +85,14 @@ long detectVcc() {
     uint8_t high = ADCH; // unlocks both
     
     long result = (high<<8) | low;
-
+#if defined (__AVR_ATmega8__) || (__AVR_ATmega8L__)
+    // Vbat = 1300mV * 1024 / ADC value
+    result = 1331200L / result; // Calculate Vcc (in mV); 1331200 = 1.3*1023*1000
+#else
     // Vbat = 1100mV * 1024 / ADC value
     result = 1125300L / result; // Calculate Vcc (in mV); 1125300 = 1.1*1023*1000
+#endif
+
     return result; // Vcc in millivolts
 }
  
