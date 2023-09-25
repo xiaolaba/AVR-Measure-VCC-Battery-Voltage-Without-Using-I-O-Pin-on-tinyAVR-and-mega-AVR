@@ -61,8 +61,10 @@ Vbat = 1100mV * 1024 / ADC value
 */
 
 long detectVcc() {
-    // Read 1.1V reference against AVcc
-    // set the reference to Vcc and the measurement to the internal 1.1V reference
+    // Read 1.1Vbg or 1.3Vbg reference against AVcc
+    // set the reference to Vcc and the measurement to the internal 1.1V or 1.3V reference
+    // 2023-SEP-25, Atmega8, testing, 1.3Vbg (ADMUX, bit MUX3:0 = 1110)
+
     #if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
         ADMUX = _BV(REFS0) | _BV(MUX4) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);
     #elif defined (__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
